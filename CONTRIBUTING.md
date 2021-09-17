@@ -1,2 +1,3 @@
 # Contribution rules
-Use `git`: No github web contributions.
+Using git is preferred over GitHub web.
+
