@@ -1,6 +1,6 @@
 # Mineshaft
 
-![](https://github.com/pygame/pygame/blob/main/docs/pygame_powered.png) 
+![[Pygame Powered!](https://pygame.org)](https://github.com/pygame/pygame/blob/main/docs/pygame_powered.png) 
 
 ### Dependencies
 Mineshaft uses these open-source libraries:
