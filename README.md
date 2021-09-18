@@ -17,7 +17,17 @@ It also depends on:
 
 
 To install the dependency libraries, run `pip3 install pygame pygame-menu screeninfo`.
-Please note that `pip3` requires Python 3. Install it [here](https://python.org).
+
+
+
+Please note that `pip3` requires Python 3. 
+
+
+
+Install it [here](https://python.org).
+
+
+
 Also note that SDL 2 comes bundled with pygame.
 
 For best experience, optional:
