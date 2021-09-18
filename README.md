@@ -1,3 +1,7 @@
+![](https://img.shields.io/badge/Cool-Yes℅2B-blue)
+![](https://img.shields.io/badge/Pygame-2.0.1%2B-yellowgreen)
+![](https://img.shields.io/badge/Python%20-3.7%2B-yellow)
+
 # Mineshaft
 
 [![Pygame Powered!](https://github.com/pygame/pygame/blob/main/docs/pygame_powered.png)](https://pygame.org) 
