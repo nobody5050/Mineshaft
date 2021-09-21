@@ -1,6 +1,7 @@
-![](https://img.shields.io/badge/Cool-Yes-blue)
-![](https://img.shields.io/badge/Pygame-2.0.1%2B-yellowgreen)
-![](https://img.shields.io/badge/Python%20-3.7%2B-yellow)
+[![](https://img.shields.io/badge/Cool-Yes-blue)](https://duckduckgo.com/😎)
+[![](https://img.shields.io/discord/868588717244317697?color=blue&label=Discord%20Community&logo=Discord&logoColor=black&style=social)](http://dsc.gg/mineshaft2d)
+[![](https://img.shields.io/badge/Pygame-2.0.1%2B-yellowgreen)](https://pygame.org)
+[![](https://img.shields.io/badge/Python%20-3.7%2B-yellow)](https://python.org)
 
 # Mineshaft
 

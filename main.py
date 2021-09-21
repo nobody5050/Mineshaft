@@ -13,9 +13,14 @@ from resources.themes import *
 class Mineshaft(object):
     def __init__(self):
         self._pygame_init()
+<<<<<<< HEAD
         self.currentpanoramapos = [random.randint(-1000, 0),random.randint(-500, 0)]
         self.panorama_x_direction = random.randint(0,1)
         self.panorama_y_direction = random.randint(0,1)
+=======
+        self.currentpanoramapos = (random.randint(-1000, 0),random.randint(-500, 0))
+        self.panorama_direction = random.randint(0,1)
+>>>>>>> 8bf6f3c7992aabb890f745c957adf0cb2cd08796
         self.screen = pygame.display.set_mode((WIDTH, HEIGHT), pygame.RESIZABLE)
         self.clock = pygame.time.Clock()
         self._menu_init(WIDTH, HEIGHT)
@@ -37,6 +42,7 @@ class Mineshaft(object):
 
     def _update_panorama(self, currentpos):
         if currentpos[0]==0:
+<<<<<<< HEAD
             self.panorama_x_direction = 1
 
         elif currentpos[0]==-1000:
@@ -62,6 +68,18 @@ class Mineshaft(object):
 
         return currentpos
 
+=======
+            self.panorama_direction = 1
+
+        elif currentpos[0]==-1000:
+            self.panorama_direction = 0
+
+        if self.panorama_direction == 0:
+            return (currentpos[0]+1, currentpos[1])
+
+        elif self.panorama_direction == 1:
+            return (currentpos[0]-1, currentpos[1])
+>>>>>>> 8bf6f3c7992aabb890f745c957adf0cb2cd08796
 
 
 
