@@ -9,3 +9,16 @@ The "puzzle" is split into these directories:
 - `render` is the rendering engine. The rendering engine manages how does the game get displayed. it also manages shading.
 - `gen` is the world generation engine.
 - `assets` are the assets like music, sounds, textures, and other stuff.
+# Setting up the developement enivroment
+As always, clone the repository by any means, ssh,GCM core, normal clone,etc.
+
+
+
+`git clone https://github.com/Mineshaft-game/Mineshaft`
+
+
+
+after that, create a remote named `gitlab` using `git remote add gitlab https://gitlab.com/double-fractal/mineshaft2d/Mineshaft`
+
+
+
