@@ -2,11 +2,11 @@ import pygame
 import screeninfo
 import os
 import random
-import screeninfo
 import pygame_menu
 from resources.colors import *
 from resources.constants import *
 from resources.themes import *
+from resources.music import *
 
 
 
@@ -17,30 +17,34 @@ class Mineshaft(object):
         self.panorama_x_direction = random.randint(0,1)
         self.panorama_y_direction = random.randint(0,1)
         self.panorama_direction = random.randint(0,1)
-        self.screen = pygame.display.set_mode((WIDTH, HEIGHT), pygame.RESIZABLE)
+        self.screen = pygame.display.set_mode((WIDTH, HEIGHT), pygame.SCALED | pygame.RESIZABLE)
         self.clock = pygame.time.Clock()
         self._menu_init(WIDTH, HEIGHT)
+        MENU1.play(-1)
 
 
     def _pygame_init(self):
         pygame.init()
-        pygame.display.set_caption("Mineshaft", "Mineshaft")
+        pygame.display.set_caption("Mineshaft","Mineshaft")
+        pygame.display.set_icon(pygame.image.load(os.path.join("assets","textures","blocks","Grass.png")))
         pygame.mouse.set_visible(False)
-
     def _menu_init(self, width, height):
-        self.menu = pygame_menu.Menu("Mineshaft", width-100, height-100, theme=MINESHAFT_DEFAULT_THEME)
+        self.menu = pygame_menu.Menu("", width-100, height-100, theme=MINESHAFT_DEFAULT_THEME)
+        self.menu.add.button('Start Game',  self.menu.toggle)
         self.menu.add.button('Quit', pygame_menu.events.EXIT)
 
         monitor = screeninfo.get_monitors()[0]
 
         self.menu.background = pygame.image.load(os.path.join(os.path.abspath(os.getcwd()), "assets", "panorama.jpeg"))
-        self.menu.background = pygame.transform.scale(self.menu.background, (monitor.width, monitor.height))
+        self.menu.background = pygame.transform.scale(self.menu.background, (width*2, height*2))
+        self.title = pygame.image.load(os.path.join("assets","mineshaft.png"))
+        self.title = pygame.transform.scale(self.title, (int(width), int(height/9)))
 
     def _update_panorama(self, currentpos):
         if currentpos[0]==0:
             self.panorama_x_direction = 1
 
-        elif currentpos[0]==-1000:
+        elif currentpos[0]==-600:
             self.panorama_x_direction = 0
 
         if currentpos[1]==0:
@@ -62,6 +66,7 @@ class Mineshaft(object):
             currentpos[1]-=1
 
         return currentpos
+    
 
 
     def update_game(self):
@@ -72,13 +77,15 @@ class Mineshaft(object):
             if event.type == pygame.VIDEORESIZE:
                 self.screen = pygame.display.set_mode((event.w, event.h), pygame.RESIZABLE)
                 self._menu_init(event.w, event.h)
+                continue
             elif event.type==pygame.QUIT:
-                pygame.quit()
+                sys.exit(pygame.quit())
 
 
         if self.menu.is_enabled():
             self.currentpanoramapos = self._update_panorama(self.currentpanoramapos)
             self.menu.update(events)
+
 
 
 
@@ -91,6 +98,7 @@ class Mineshaft(object):
         if self.menu.is_enabled():
             self.screen.blit(self.menu.background, self.currentpanoramapos)
             self.menu.draw(self.screen)
+            self.screen.blit(self.title, [0,0])
 
 
 

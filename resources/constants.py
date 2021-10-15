@@ -1,3 +1,3 @@
-HEIGHT = 1000
-WIDTH = 1000
+HEIGHT = 600
+WIDTH = 800
 NAME = "Mineshaft"
